@@ -1,0 +1,12 @@
+data files required: 1.png, 2.png, ... , 6.png
+programming file required: HOG.png
+
+output file hog.png based on 3.png (MOHIT GUPTA) because I thought the plaid shirt was interesting
+
+technically I just did cross-correlation instead of convolution, but the result is the same when opposite directions are put in the same bin, and it's slightly less work.
+If I constructed flipped versions of the sobel filters, then it'd be actual convolution, but again, which direction you define as positive x/positive y is arbitrary, so...
+(I zero-padded the input image to calculate the gradients, though I noticed in the solution another option would have been to simply ignore out-of-bounds indeces)
+
+I noticed I had to do atan2(x/y) rather than atan2(y/x) to get the output image to look right. Makes sense, as this way the lines are tangent rather than perpendicular
+
+Faculty photos:  AWS ALBARGHOUTHI, LORIS D'ANTONI, MOHIT GUPTA, BEN LIBLIT, DIMITRIS PAPAILIOPOULOS, JUDE SHAVLIK
